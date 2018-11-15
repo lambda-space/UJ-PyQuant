@@ -1,0 +1,63 @@
+\begin{frame}[fragile]{IO Operations}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{read mode}
+        \begin{minted}[mathescape,
+            autogobble,
+            breaklines=true,
+            linenos,
+            fontsize=\footnotesize,
+            framesep=2mm]{python}
+          with open(fname, 'r') as f:
+            do-something
+        \end{minted}
+      \end{block}
+    \end{column}
+    \hfill
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{write mode}
+        \begin{minted}[mathescape,
+            autogobble,
+            breaklines=true,
+            linenos,
+            fontsize=\footnotesize,
+            framesep=2mm]{python}
+          with open(fname, 'w') as f:
+            do-something
+        \end{minted}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      fontsize=\scriptsize,
+      frame=lines,
+      label=read\_write.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+    from cipher import rot
+
+    def readfile(fname):
+      with open(fname, 'r') as f:
+        return f.readlines()
+
+    def writelines(infile, outfile, shiftby):
+      with open(outfile, 'w') as f:
+        f.writelines(rot(''.join(readfile(infile)), shiftby))
+  \end{minted}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      fontsize=\scriptsize,
+      framesep=2mm]{python}
+    prompt> #writefile(infile,outfile,shiftby)
+    prompt> writefile('cipher.py', 'secret.py', 1)
+  \end{minted}
+
+\end{frame}

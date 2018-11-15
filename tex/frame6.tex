@@ -1,0 +1,38 @@
+\begin{frame}[fragile]{Branching and List Comprehension}
+  \vspace{2pt}
+  \begin{block}{if statements}
+    \begin{minted}[mathescape,
+        autogobble,
+        breaklines=true,
+        linenos,
+        fontsize=\scriptsize,
+        framesep=2mm]{python}
+      if test-1:
+        code to run should test 1 succeed
+      elif test-2:
+        code to run should test 2 succeed
+      else:
+        run this should all other tests fail
+    \end{minted}
+  \end{block}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={1},
+      fontsize=\scriptsize,
+      frame=lines,
+      label=multiway\_branching.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+    heros = [h.strip() for h in "Batman, Superman, Wonder Woman".split(',')]
+    for hero in heros:
+      if hero == 'Batman':
+        print('I am Batman.')
+      elif hero == 'Superman':
+        print('Up, up and away!')
+      else:
+        print('Sorry boys! Amazonians don\'t market', sep='')
+  \end{minted}
+\end{frame}

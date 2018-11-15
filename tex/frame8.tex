@@ -1,0 +1,31 @@
+\begin{frame}[fragile]{Consolidation}
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={4-7,9,11,13-14,16},
+      fontsize=\scriptsize,
+      frame=lines,
+      label=ratings.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+
+    import random
+    
+    def ratings():
+      courses = ['Python for Quants'
+        , 'Monte Carlo Methods'
+        , 'Financial Engineering for Pedestrians'
+        , 'Least Square Monte Carlo Methods...']
+      
+      draw_stars = lambda n: '*' * n  #pay attention to this line
+      
+      ratings = "5 4 3 2 1".split()
+      print('PRINTING COURSE RATINGS...')
+      for course in courses:
+        if course == 'Python for Quants':
+          print('| {ratings:5s} |. {course_title}'.format(ratings= draw_stars(5), course_title = course))
+        else:
+        print('| {ratings:5s} |. {course_title}'.format(ratings= draw_stars(int(random.choice(ratings))), course_title = course))
+  \end{minted}
+\end{frame}

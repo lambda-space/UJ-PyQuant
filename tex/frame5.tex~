@@ -1,0 +1,72 @@
+\begin{frame}[fragile]{Looping through Lists}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{for loop}
+        \begin{minted}[mathescape,
+            autogobble,
+            breaklines=true,
+            linenos,
+            fontsize=\footnotesize,
+            framesep=2mm]{python}
+          for item in iterable:
+            do-something
+        \end{minted}
+      \end{block}
+    \end{column}
+    \hfill
+
+    \begin{column}{0.48\textwidth}
+      \begin{block}{while loop}
+        \begin{minted}[mathescape,
+            autogobble,
+            breaklines=true,
+            linenos,
+            fontsize=\footnotesize,
+            framesep=2mm]{python}
+          while condition-holds:
+            do-something
+        \end{minted}
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      fontsize=\small,
+      framesep=2mm]{python}
+    friends = "Batman, Superman, Wonder Woman".split(',')
+  \end{minted}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={3,4},
+      fontsize=\footnotesize,
+      frame=lines,
+      label=for\_loop.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+    def for_loop(friends):
+      for friend in friends:
+        print('Hello, ', friend, sep='')
+  \end{minted}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={3-5},
+      fontsize=\footnotesize,
+      frame=lines,
+      label=while\_loop.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+    def while_loop(friends):
+      friends_copy = friends[:]  #start by leaving out [:]
+      while friends_copy != []:
+        print('Hello, ', friends_copy.pop(), sep='')
+  \end{minted}
+\end{frame}

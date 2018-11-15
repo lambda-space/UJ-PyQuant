@@ -1,0 +1,37 @@
+\begin{frame}[fragile]{Functions}
+  \vspace{0.1em}
+  \begin{block}{function definition}
+    \begin{minted}[mathescape,
+        autogobble,
+        breaklines=true,
+        linenos,
+        fontsize=\small,
+        framesep=2mm]{python}
+      def function_name(pos, *args, **kwds):
+        """ documentation string """
+        body
+    \end{minted}
+  \end{block}
+
+  Three important components of a function are it's:
+  \begin{itemize}\vspace{0.1em}
+  \item arguments
+  \item body
+  \item environment
+  \end{itemize}
+  
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={1},
+      fontsize=\footnotesize,
+      frame=lines,
+      label=greetings.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+    def greetings(name):
+      """ takes a string and writes a message to the console. """
+      print('Hello, {whom}. It is nice meeting you!'.format(whom=name))		
+  \end{minted}
+\end{frame}

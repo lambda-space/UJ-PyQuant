@@ -1,0 +1,42 @@
+\begin{frame}[fragile]{Import statement}
+  \vspace{2pt}
+  \begin{block}{import}
+    \begin{minted}[mathescape,
+        autogobble,
+        breaklines=true,
+        linenos,
+        fontsize=\scriptsize,
+        framesep=2mm]{python}
+      import module-name                       #variant 1
+      from   module-name import name [,names]  #variant 2
+      from   module-name import *              #variant 3
+      import module-name as new-name           #variant 4
+    \end{minted}
+  \end{block}
+
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      highlightlines={2-3},
+      fontsize=\scriptsize,
+      frame=lines,
+      label=cipher.py,
+      labelposition=topline,
+      framesep=2mm]{python}
+      def rot(string, n):
+        def shift(c): return shift(c.lower()).upper() if c.isupper() else chr((((ord(c) - 97) + n) % 26) + 97)
+        return ''.join([(lambda c: shift(c) if c.isalpha() else c)(ch) for ch in string])      
+  \end{minted}
+  
+  \begin{minted}[mathescape,
+      autogobble,
+      breaklines=true,
+      linenos,
+      fontsize=\scriptsize,
+      framesep=2mm]{python}
+    prompt> import cipher
+    prompt> cipher.rot('hal', 1)
+    prompt> 'ibm'
+  \end{minted}
+\end{frame}
